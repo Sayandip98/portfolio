@@ -1,0 +1,11 @@
+.portfolio-app {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--bg-main, #08090D);
+}
+
+#main-content {
+  position: relative;
+  z-index: 2;
+}

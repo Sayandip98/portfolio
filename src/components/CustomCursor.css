@@ -1,0 +1,95 @@
+/* Custom Animated Cursor */
+.custom-cursor-dot,
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.25s ease,
+              width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.custom-cursor-dot.visible,
+.custom-cursor-ring.visible {
+  opacity: 1;
+}
+
+/* Precision Inner Dot */
+.custom-cursor-dot {
+  width: 7px;
+  height: 7px;
+  margin-left: -3.5px;
+  margin-top: -3.5px;
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.8),
+              0 0 16px rgba(0, 229, 255, 0.4);
+}
+
+.custom-cursor-dot.hovered {
+  width: 9px;
+  height: 9px;
+  margin-left: -4.5px;
+  margin-top: -4.5px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.9),
+              0 0 20px rgba(0, 229, 255, 0.8);
+}
+
+.custom-cursor-dot.clicked {
+  transform: scale(0.6);
+}
+
+/* Fluid Trailing Outer Ring */
+.custom-cursor-ring {
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+  margin-top: -17px;
+  border: 1.5px solid rgba(0, 229, 255, 0.65);
+  background: rgba(0, 229, 255, 0.02);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.2);
+}
+
+.custom-cursor-ring.hovered {
+  width: 54px;
+  height: 54px;
+  margin-left: -27px;
+  margin-top: -27px;
+  border-color: #E040FB;
+  background: rgba(224, 64, 251, 0.08);
+  box-shadow: 0 0 24px rgba(224, 64, 251, 0.4),
+              0 0 12px rgba(0, 229, 255, 0.3);
+}
+
+.custom-cursor-ring.clicked {
+  width: 26px;
+  height: 26px;
+  margin-left: -13px;
+  margin-top: -13px;
+  border-color: var(--accent-cyan);
+  background: rgba(0, 229, 255, 0.2);
+}
+
+/* Touch & Reduced-Motion queries */
+@media (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}

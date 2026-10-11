@@ -1,0 +1,67 @@
+/* Responsive Media Queries */
+
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 70px;
+    --space-4xl: 5.5rem;
+    --space-3xl: 4rem;
+  }
+
+  .container {
+    --container-padding: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+    --space-4xl: 4rem;
+    --space-3xl: 3rem;
+    --space-2xl: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .mouse-glow-follower {
+    display: none; /* Disable pointer-follower on touch screens for performance */
+  }
+
+  .btn {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 1rem;
+    --space-4xl: 3.5rem;
+    --space-3xl: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
